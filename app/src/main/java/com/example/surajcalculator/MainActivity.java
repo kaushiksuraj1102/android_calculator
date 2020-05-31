@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnDot,btnEqual,btnAdd,btnSub,btnMul,btnDiv,btnClear;
     EditText ed1;
+    TextView tx1;
     Double Res1,Res2;
     boolean Add,Sub,Mul,Div;
 
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnDiv=(Button)findViewById(R.id.btnDiv);
         btnClear=(Button)findViewById(R.id.btnClear);
         ed1=(EditText)findViewById(R.id.editText);
+        tx1=(TextView)findViewById(R.id.textView);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     Res1=Double.parseDouble(ed1.getText()+"");
                     Add=true;
                     ed1.setText(null);
+                    tx1.setText(Res1+" + ");
 
                 }
             }
@@ -127,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
                     Res1=Double.parseDouble(ed1.getText()+"");
                     Sub=true;
                     ed1.setText(null);
+                    tx1.setText(Res1+" - ");
 
                 }
             }
@@ -141,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     Res1=Double.parseDouble(ed1.getText()+"");
                     Mul=true;
                     ed1.setText(null);
+                    tx1.setText(Res1+" * ");
 
                 }
             }
@@ -155,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                     Res1=Double.parseDouble(ed1.getText()+"");
                     Div=true;
                     ed1.setText(null);
-
+                    tx1.setText(Res1+" / ");
                 }
             }
         });
@@ -164,18 +170,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Res2=Double.parseDouble(ed1.getText()+"");
                 if(Add==true){
+                    tx1.setText(Res1+" + "+Res2);
                     ed1.setText(Res1+Res2+"");
                     Add=false;
                 }
                 if(Sub==true){
+                    tx1.setText(Res1+" - "+Res2);
                     ed1.setText(Res1-Res2+"");
                     Sub=false;
                 }
                 if(Mul==true){
+                    tx1.setText(Res1+" * "+Res2);
                     ed1.setText(Res1*Res2+"");
                     Mul=false;
                 }
                 if(Div==true){
+                    tx1.setText(Res1+" / "+Res2);
                     ed1.setText(Res1/Res2+"");
                     Div=false;
                 }
@@ -184,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tx1.setText("");
                 ed1.setText("");
             }
         });
