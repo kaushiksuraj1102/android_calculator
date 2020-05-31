@@ -8,19 +8,21 @@
 
     <TextView
         android:id="@+id/textView"
-        android:inputType="number"
         android:layout_width="382dp"
         android:layout_height="79dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="20dp"
+        android:inputType="number"
+        android:shadowColor="#353131"
         android:textAlignment="textEnd"
+        android:textColor="#0B0A0A"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +36,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:textAlignment="viewEnd"
+        android:textColor="#1B1919"
         android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +46,7 @@
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="86dp"
+        android:layout_width="65dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="67dp"
